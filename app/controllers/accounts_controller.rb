@@ -30,10 +30,13 @@ class AccountsController < ApplicationController
 
   def update
     @account = Account.find(params[:id])
-    @account.update(account_params)
-
+    if @account.update(account_params)
     flash[:notice] = "This Account has been updated."
     redirect_to @account
+    else
+      flash[:alert] = "This Account has not been updated."
+      render "edit"
+    end
   end
 
   private

@@ -15,4 +15,11 @@ feature "Editing Accounts" do
 
     expect(page).to have_content("This Account has been updated.")
   end
+
+  scenario "Updating an account with invalid attributes is bad" do
+    fill_in "Name", with: ""
+    click_button "Update Account"
+
+    expect(page).to have_content("This Account has not been updated.")
+  end
 end

@@ -9,7 +9,7 @@ feature "Editing Accounts" do
     click_link "Edit Account"
   end
 
-  scenario "Updating a project" do
+  scenario "Updating an account" do
     fill_in "Name", with: "Cable Company"
     click_button "Update Account"
 

@@ -14,6 +14,9 @@ class AccountsController < ApplicationController
       flash[:notice] = "This Account has been created."
       redirect_to @account
     else
+      flash[:alert] = "This Account has not been created."
+
+      render "new"
     end
   end
 
