@@ -31,16 +31,25 @@ class AccountsController < ApplicationController
   def update
     @account = Account.find(params[:id])
     if @account.update(account_params)
-    flash[:notice] = "This Account has been updated."
-    redirect_to @account
+      flash[:notice] = "This Account has been updated."
+      redirect_to @account
     else
       flash[:alert] = "This Account has not been updated."
       render "edit"
     end
   end
 
+  def destroy
+    @account = Account.find(params[:id])
+    @account.destroy
+
+    flash[:notice] = "This Account has been deleted."
+
+    redirect_to accounts_path
+  end
+
   private
-  
+
   def account_params
     params.require(:account).permit(:name, :number, :website, :email)
   end
