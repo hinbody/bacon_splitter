@@ -1,4 +1,9 @@
 class AccountsController < ApplicationController
+  before_action :set_account, only: [:show,
+                                     :edit,
+                                     :update,
+                                     :destroy]
+
   def index
     @accounts = Account.all
   end
@@ -21,15 +26,12 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @account = Account.find(params[:id])
   end
 
   def edit
-    @account = Account.find(params[:id])
   end
 
   def update
-    @account = Account.find(params[:id])
     if @account.update(account_params)
       flash[:notice] = "This Account has been updated."
       redirect_to @account
@@ -40,7 +42,6 @@ class AccountsController < ApplicationController
   end
 
   def destroy
-    @account = Account.find(params[:id])
     @account.destroy
 
     flash[:notice] = "This Account has been deleted."
@@ -52,6 +53,13 @@ class AccountsController < ApplicationController
 
   def account_params
     params.require(:account).permit(:name, :number, :website, :email)
+  end
+
+  def set_account
+    @account = Account.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The account you were looking for could not be found."
+    redirect_to accounts_path
   end
 
 end
