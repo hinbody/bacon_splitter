@@ -1,4 +1,9 @@
 <h2><%= @account.name %></h2>
+<ul>
+  <li>Account Number: <%= @account.number %></li>
+  <li>website: <%= @account.website %></li>
+  <li>email: <%= @account.email %></li>
+</ul>
 <%= link_to "Edit Account", edit_account_path(@account) %><br />
 <%= link_to "Delete Account",
   account_path(@account),
