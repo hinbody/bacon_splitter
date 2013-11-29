@@ -10,7 +10,9 @@
 
   <% flash.each do |key, value| %>
     <div class='flash' id='<%= key %>'>
-      <%= value %>
+      <div id='flash_value'>
+        <%= value %>
+      </div>
     </div>
   <% end %>
 <%= yield %>
