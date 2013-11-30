@@ -5,7 +5,6 @@
   <li>website: <%= @account.website %></li>
   <li>email: <%= @account.email %></li>
 </ul>
-<%= p params %>
 <%= link_to "Edit Account", edit_account_path(@account) %><br />
 <%= link_to "Delete Account",
   account_path(@account),

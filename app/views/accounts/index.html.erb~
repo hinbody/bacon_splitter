@@ -1,1 +1,8 @@
 <%= link_to "New Account", new_account_path %>
+<h2>Accounts</h2>
+<ul>
+  <% @accounts.each do |account| %>
+    <li><%= link_to account.name, account %></li>
+  <% end %>
+  <%= link_to "New Bill", new_account_bill_path(@account) %>
+</ul>
