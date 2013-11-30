@@ -52,7 +52,7 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params.require(:account).permit(:name, :number, :website, :email)
+    params.require(:account).permit(:name, :number, :website, :email, :phone_number)
   end
 
   def set_account

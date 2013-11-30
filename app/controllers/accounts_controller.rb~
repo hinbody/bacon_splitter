@@ -26,15 +26,12 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @account = Account.find(params[:id])
   end
 
   def edit
-    @account = Account.find(params[:id])
   end
 
   def update
-    @account = Account.find(params[:id])
     if @account.update(account_params)
       flash[:notice] = "This Account has been updated."
       redirect_to @account
@@ -45,7 +42,6 @@ class AccountsController < ApplicationController
   end
 
   def destroy
-    @account = Account.find(params[:id])
     @account.destroy
 
     flash[:notice] = "This Account has been deleted."
