@@ -11,4 +11,13 @@
   method: :delete,
   data: { confirm:
     "Are you sure you want to delete this account?"
-} %>
+} %><br />
+<%= link_to "New Bill", new_account_bill_path(@account) %>
+<ul id='bills'>
+  <% @account.bills.each do |bill| %>
+    <li>
+    #<%= bill.id %> -
+    <%= link_to bill.title, [@account, bill] %>
+    </li>
+  <% end %>
+</ul>
