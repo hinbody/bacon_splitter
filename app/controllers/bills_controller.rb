@@ -20,6 +20,19 @@ class BillsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @bill.update(bill_params)
+      flash[:notice] = "Bill has been updated."
+      redirect_to [@account, @bill]
+    else
+      flash[:alert] = "Bill has not been updated."
+      render action: "edit"
+    end
+  end
+
   private
   def bill_params
     params.require(:bill).permit(:invoice_number, :current_due, :due_date)

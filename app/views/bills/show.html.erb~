@@ -1,5 +1,5 @@
 <div id='bill'>
   <h2><%= @bill.invoice_number %></h2>
-  <%= link_to "Edit Bill", [:edit, @account, @bill] %><br />
+  <%= link_to "Edit Bill", [:edit, @account, @bill] %>
   <%= @bill.current_due %> due by <%= @bill.due_date %>
 </div>

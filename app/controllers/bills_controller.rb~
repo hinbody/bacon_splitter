@@ -1,6 +1,6 @@
 class BillsController < ApplicationController
   before_action :set_account
-  before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+  before_action :set_bill, only: [:show, :edit, :update, :destroy]
 
   def new
     @bill = @account.bills.build
@@ -18,6 +18,9 @@ class BillsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
   end
 
   private
