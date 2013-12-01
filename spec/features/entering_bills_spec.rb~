@@ -23,6 +23,6 @@ feature "Entering Bills" do
 
     expect(page).to have_content("Bill has not been entered.")
     expect(page).to have_content("Current due can't be blank")
-    expect(page).to have_content("Due date can't be blank")
+    expect(page).to have_content("Due date can't be black")
   end
 end
