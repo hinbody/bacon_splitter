@@ -7,10 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= link_to "All Accounts", accounts_path %><br />
 
   <% flash.each do |key, value| %>
     <div class='flash' id='<%= key %>'>
-      <%= value %>
+      <div id='flash_value'>
+        <%= value %>
+      </div>
     </div>
   <% end %>
 <%= yield %>

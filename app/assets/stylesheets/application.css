@@ -38,3 +38,7 @@
   margin-right: auto;
   width: 50%
 }
+
+#error_explanation {
+  color: red;
+}

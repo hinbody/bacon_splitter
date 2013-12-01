@@ -11,10 +11,10 @@
  *= require_self
  *= require_tree .
  */
-* {
+/* {
     padding: 0;
     margin: 0;
-}
+} */
 
 .flash {
   padding: 10px;
@@ -37,4 +37,9 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%
+}
+
+#error_explanation {
+  background: black;
+  color: red;
 }
