@@ -26,11 +26,20 @@ class BillsController < ApplicationController
   def update
     if @bill.update(bill_params)
       flash[:notice] = "Bill has been updated."
+
       redirect_to [@account, @bill]
     else
       flash[:alert] = "Bill has not been updated."
+
       render action: "edit"
     end
+  end
+
+  def destroy
+    @bill.destroy
+    flash[:notice] = "Bill has been deleted."
+
+    redirect_to @account
   end
 
   private
