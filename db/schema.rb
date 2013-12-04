@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131130161631) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "accounts", force: true do |t|
     t.string   "name"
     t.string   "number"
@@ -34,6 +37,6 @@ ActiveRecord::Schema.define(version: 20131130161631) do
     t.datetime "updated_at"
   end
 
-  add_index "bills", ["account_id"], name: "index_bills_on_account_id"
+  add_index "bills", ["account_id"], name: "index_bills_on_account_id", using: :btree
 
 end
