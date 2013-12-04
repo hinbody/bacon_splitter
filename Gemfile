@@ -43,9 +43,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development do
-gem 'sqlite3'
-end
 
 group :test, :developement do
 gem 'rspec-rails', "~> 2.14"
@@ -57,7 +54,7 @@ gem 'factory_girl_rails', '~> 4.2.1'
 end
 
 group :production do
-gem 'pg', '0.15.1'
 gem 'rails_12factor', '0.0.2'
 end
 
+gem 'pg', '0.15.1'

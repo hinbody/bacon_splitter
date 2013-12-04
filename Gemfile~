@@ -43,9 +43,12 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development do
+gem 'sqlite3'
+end
+
 group :test, :developement do
 gem 'rspec-rails', "~> 2.14"
-gem 'sqlite3'
 end
 
 group :test do
