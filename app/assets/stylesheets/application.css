@@ -12,9 +12,36 @@
  *= require_tree .
  */
 /* {
-    padding: 0;
-    margin: 0;
+padding: 0;
+margin: 0;
 } */
+
+#header {
+  background-color: #A43C0B;
+  min-height: 150px;
+}
+
+nav ul {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+nav li {
+  display: inline;
+  padding: 5px;
+} 
+
+nav a {
+  text-decoration: none;
+}
+
+#main_content {
+  background-color: #A43C0B;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
 
 .flash {
   padding: 10px;

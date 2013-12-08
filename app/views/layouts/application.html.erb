@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BaconSplitter</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+<title>BaconSplitter</title>
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "All Accounts", accounts_path %><br />
+<div id='header'></div>
+<nav>
+  <ul>
+    <li><%= link_to "All Accounts", accounts_path %><li />
+    <li><%= link_to "All Accounts", accounts_path %><li />
+    <li><%= link_to "All Accounts", accounts_path %><li />
+  </ul>
+</nav>
 
-  <% flash.each do |key, value| %>
-    <div class='flash' id='<%= key %>'>
-      <div id='flash_value'>
-        <%= value %>
-      </div>
-    </div>
+<% flash.each do |key, value| %>
+  <div class='flash' id='<%= key %>'>
+  <div id='flash_value'>
+    <%= value %>
+  </div>
+</div>
   <% end %>
-<%= yield %>
+<div id='main_content'>
+  <%= yield %>
+</div>
 
 </body>
 </html>
