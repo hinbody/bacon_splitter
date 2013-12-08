@@ -20,19 +20,28 @@ feature "Viewing bills" do
                        #due_date: "12/13/2013")
 
     visit accounts_path
+    click_link "Cable Co."
+    click_link "1234"
   end
 
   scenario "Viewing bills for a particular account" do
-    click_link "Cable Co."
 
     expect(page).to have_content("1234")
     expect(page).to_not have_content("5678")
 
-    click_link "1234"
     within("#bill h2") do
       expect(page).to have_content("1234")
     end
     expect(page).to have_content("24.35")
-    expect(page).to have_content("12/12/2013")
+    expect(page).to have_content("2013-12-12")
+  end
+
+  scenario "link back to @account" do
+
+    click_link "Cable Co."
+    #current_path.should == account_path(account)
+    within("h2") do
+      expect(page).to have_content('Cable Co.')
+    end
   end
 end
