@@ -1,10 +1,11 @@
 <h2><%= @account.name %></h2>
-<ul>
+<ul id="show_account">
   <li>Account Number: <%= @account.number %></li>
   <li>Phone Number: <%= @account.phone_number %></li>
   <li>website: <%= @account.website %></li>
   <li>email: <%= @account.email %></li>
 </ul>
+<div id="account_crud">
 <%= link_to "Edit Account", edit_account_path(@account) %><br />
 <%= link_to "Delete Account",
   account_path(@account),
@@ -12,12 +13,13 @@
   data: { confirm:
     "Are you sure you want to delete this account?"
 } %><br />
+</div>
 <%= link_to "New Bill", new_account_bill_path(@account) %>
 <ul id='bills'>
   <% @account.bills.each do |bill| %>
     <li>
     #<%= bill.id %> -
-    <%= link_to bill.title, [@account, bill] %>
+    <%= link_to bill.invoice_number, [@account, bill] %>
     </li>
   <% end %>
 </ul>
