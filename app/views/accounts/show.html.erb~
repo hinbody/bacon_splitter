@@ -1,4 +1,4 @@
-<h2><%= @account.name %></h2>
+<h2 id="account_header"><%= @account.name %></h2>
 <ul id="show_account">
   <li>Account Number: <%= @account.number %></li>
   <li>Phone Number: <%= @account.phone_number %></li>
