@@ -9,7 +9,6 @@
 } %><br />
 </div>
 Your average bill is <%= @average %>
-<%= p params %>
 <ul id="show_account">
   <li>Account Number: <%= @account.number %></li>
   <li>Phone Number: <%= @account.phone_number %></li>
@@ -20,8 +19,8 @@ Your average bill is <%= @average %>
 <ul id='bills'>
   <% @account.bills.each do |bill| %>
     <li>
-    #<%= bill.id %> -
-    <%= link_to bill.invoice_number, [@account, bill] %>
+    #<%= bill.id %> - <%= bill.invoice_nuber %> -
+    <%= link_to bill.current_due, [@account, bill] %>
     </li>
   <% end %>
 </ul>
