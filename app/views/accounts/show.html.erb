@@ -19,7 +19,7 @@ Your average bill is <%= @average %>
 <ul id='bills'>
   <% @account.bills.each do |bill| %>
     <li>
-    #<%= bill.id %> - <%= bill.invoice_number %> -
+    #<%= bill.id %> - <%= link_to bill.invoice_number, [@account, bill]  %> -
     <%= link_to bill.current_due, [@account, bill] %>
     </li>
   <% end %>
