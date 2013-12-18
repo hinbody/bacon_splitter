@@ -26,7 +26,7 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @average = sprintf('%.2f', compute_average)
+    @average = sprintf('%.2f', compute_average) 
   end
 
   def edit
@@ -66,6 +66,7 @@ class AccountsController < ApplicationController
     account_id = params[account_id]
     amounts_due = Bill.where(["account_id = ?", params[:id]]).select('current_due').take(12).map { |b| b.current_due }
     amounts_due.sum/amounts_due.count unless amounts_due.count == 0
+    0
   end
 
 end
