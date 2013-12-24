@@ -14,6 +14,6 @@ feature 'Deleting bills' do
     click_link "Delete Bill"
 
     expect(page).to have_content("Bill has been deleted.")
-    expect(page.current_url).to eq(account_url(account)
+    expect(page.current_url).to eq(account_url(account))
   end
 end

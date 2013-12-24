@@ -50,7 +50,9 @@ nav a {
 }
 
 #main_content {
-  background-color: #A43C0B;
+  /*background-color: #A43C0B;*/
+  border-color: #A43C0B;
+  border-style: solid;
   margin: 0 auto;
   width: 75%;
   padding: 15px;

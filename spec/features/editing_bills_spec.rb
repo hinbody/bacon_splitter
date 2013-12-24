@@ -7,7 +7,7 @@ feature "Editing bills" do
   before do
     visit accounts_path
     click_link account.name
-    click_link bill.invoice_number
+    click_link bill.due_date
     click_link "Edit Bill"
   end
 

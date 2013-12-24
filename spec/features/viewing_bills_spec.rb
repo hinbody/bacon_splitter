@@ -21,7 +21,7 @@ feature "Viewing bills" do
 
     visit accounts_path
     click_link "Cable Co."
-    click_link "1234"
+    click_link "2013-12-12"
   end
 
   scenario "Viewing bills for a particular account" do

@@ -21,7 +21,7 @@ feature "Viewing bills" do
 
     visit accounts_path
     click_link "Cable Co."
-    click_link "1234"
+    click_link "2013-12-12"
   end
 
   scenario "Viewing bills for a particular account" do
@@ -39,6 +39,7 @@ feature "Viewing bills" do
   scenario "link back to @account" do
 
     click_link "Cable Co."
+    #not sure what var to use for the route helper below
     #current_path.should == account_path(account)
     within("h2") do
       expect(page).to have_content('Cable Co.')

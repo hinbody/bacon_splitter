@@ -25,7 +25,7 @@ feature "Editing bills" do
   end
 
   scenario "Updating a bill with invalid information" do
-    fill_in "current due", with: ""
+    fill_in "current amount due", with: ""
     click_button "Enter Bill"
 
     expect(page).to have_content("Bill has not been updated.")
