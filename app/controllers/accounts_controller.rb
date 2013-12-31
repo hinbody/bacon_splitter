@@ -62,12 +62,14 @@ class AccountsController < ApplicationController
     flash[:alert] = "The account you were looking for could not be found."
     redirect_to accounts_path
   end
+
   def compute_average
-    account_id = params[account_id]
     amounts_due = Bill.where(["account_id = ?", params[:id]]).select('current_due').take(12).map { |b| b.current_due }
     if amounts_due.count == 0
       0
-    else
+    #elsif amounts_due.count == 12
+    #  amounts_due.sum/52
+    elsif amounts_due.count 1...11
       amounts_due.sum/amounts_due.count 
     end
   end

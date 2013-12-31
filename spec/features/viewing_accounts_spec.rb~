@@ -17,6 +17,10 @@ feature "Viewing accounts" do
   end
 
   scenario "account#show should show the average monthly bill" do
-    expect(page).to have_content("Your average bill is 30.00")
+    expect(page).to have_content("Your average monthly bill is 30.00")
+  end
+
+  scenario "account#show should show average weekly bill if bill.count > 12" do
+    #not sure the best way to do this... create 12 bills here?
   end
 end

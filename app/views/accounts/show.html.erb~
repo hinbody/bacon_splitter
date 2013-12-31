@@ -20,7 +20,7 @@ Your average bill is <%= @average %>
   <% @account.bills.each do |bill| %>
     <li>
     <%= link_to bill.due_date, [@account, bill]  %> -
-    bill.current_due
+    <%= bill.current_due %>
     </li>
   <% end %>
 </ul>
