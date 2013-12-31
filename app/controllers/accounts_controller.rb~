@@ -68,7 +68,7 @@ class AccountsController < ApplicationController
     if amounts_due.count == 0
       0
     else
-    amounts_due.sum/amounts_due.count 
+      amounts_due.sum/amounts_due.count +1
     end
   end
 
