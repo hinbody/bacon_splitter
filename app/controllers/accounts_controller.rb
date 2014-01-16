@@ -3,6 +3,7 @@ class AccountsController < ApplicationController
                                      :edit,
                                      :update,
                                      :destroy]
+  before_action :require_signin!
 
   def index
     @accounts = Account.all

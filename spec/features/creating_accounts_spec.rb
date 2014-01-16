@@ -2,7 +2,15 @@ require 'spec_helper'
 
 feature 'Creating Accounts' do
   before do
+    user = FactoryGirl.create(:user)
+
     visit accounts_path
+    message = "Please sign in or create a user account to continue"
+    expect(page).to have_content(message)
+
+    fill_in "Name", with: user.name
+    fill_in "Password", with: user.password
+    click_button "Sign in"
 
     click_link 'New Account'
   end
